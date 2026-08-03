@@ -1,0 +1,26 @@
+retail_dbt:
+  target: dev
+
+  outputs:
+
+    dev:
+
+      type: snowflake
+
+      account: KTWIZXN-TH66075
+
+      user: vinay2618
+
+      password: Vinay@Kumar369852
+
+      role: ACCOUNTADMIN
+
+      database: RETAIL_DB1
+
+      warehouse: COMPUTE_WH
+
+      schema: STAGING
+
+      threads: 4
+
+      client_session_keep_alive: False
