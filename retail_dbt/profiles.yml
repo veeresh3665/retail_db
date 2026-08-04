@@ -7,15 +7,15 @@ retail_dbt:
 
       type: snowflake
 
-      account: KTWIZXN-TH66075
+      account: MKKDCUL-RL41122
 
-      user: vinay2618
+      user: VEERESH123
 
-      password: Vinay@Kumar369852
+      password: Veereshkumar@135
 
       role: ACCOUNTADMIN
 
-      database: RETAIL_DB1
+      database: VE_trans
 
       warehouse: COMPUTE_WH
 
