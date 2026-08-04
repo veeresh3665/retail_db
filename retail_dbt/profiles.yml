@@ -19,7 +19,7 @@ retail_dbt:
 
       warehouse: COMPUTE_WH
 
-      schema: STAGING
+      schema: v_stg
 
       threads: 4
 

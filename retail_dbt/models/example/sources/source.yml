@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    database: VE_trans
+    database: VE_SHAREPOINT
     schema: RAW
 
     tables:
