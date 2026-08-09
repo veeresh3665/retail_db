@@ -21,7 +21,7 @@ def welcome():
 with DAG(
     dag_id="hello_airflow",
     description="My First Airflow DAG",
-    start_date=datetime(2026, 1, 1),
+    start_date=datetime(2026, 1,1),
     schedule=None,
     catchup=False,
     tags=["training"],
