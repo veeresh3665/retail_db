@@ -15,7 +15,7 @@ on:
 jobs:
 
   # ==========================================
-  # JOB 1: Validate Python and Airflow code
+  # JOB 1: Validate Python / Airflow
   # ==========================================
 
   python-validation:
@@ -27,25 +27,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
-
       - name: Check Python version
         run: python --version
 
-
-      - name: Validate Python files
+      - name: Validate Airflow Python files
         run: |
           python -m compileall airflow
+
+      - name: Validate Python validation script
+        run: |
           python -m compileall run_validation.py
 
 
   # ==========================================
-  # JOB 2: Validate dbt project
+  # JOB 2: dbt CI
   # ==========================================
 
   dbt-validation:
@@ -75,13 +75,47 @@ jobs:
           dbt --version
 
 
+      - name: Create dbt profiles.yml
+        working-directory: retail_dbt
+        env:
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+        run: |
+          cat > profiles.yml <<EOF
+          retail_dbt:
+            target: ci
+            outputs:
+              ci:
+                type: snowflake
+                account: "$SNOWFLAKE_ACCOUNT"
+                user: "$SNOWFLAKE_USER"
+                password: "$SNOWFLAKE_PASSWORD"
+                database: "$SNOWFLAKE_DATABASE"
+                schema: "$SNOWFLAKE_SCHEMA"
+                warehouse: "$SNOWFLAKE_WAREHOUSE"
+                role: "$SNOWFLAKE_ROLE"
+                threads: 4
+          EOF
+
+
       - name: Install dbt dependencies
         working-directory: retail_dbt
         run: |
           dbt deps
 
 
-      - name: Parse dbt project
+      - name: dbt debug
+        working-directory: retail_dbt
+        run: |
+          dbt debug
+
+
+      - name: dbt parse
         working-directory: retail_dbt
         run: |
           dbt parse
