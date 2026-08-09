@@ -72,4 +72,4 @@ models:
       - name: employee_id
         tests:
           - unique
-          - not_nulld
+          - not_null
