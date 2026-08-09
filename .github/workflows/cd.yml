@@ -1,0 +1,50 @@
+name: Retail Data Pipeline CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Retail Data Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout approved code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate Airflow DAG Python files
+        run: |
+          python -m compileall airflow/dags
+
+      - name: Validate dbt project
+        working-directory: retail_dbt
+        run: |
+          pip install dbt-core==1.12.0 dbt-snowflake==1.12.0
+          dbt parse
+
+      - name: Create deployment package
+        run: |
+          mkdir -p deployment
+
+          cp -r airflow/dags deployment/airflow_dags
+          cp -r retail_dbt deployment/retail_dbt
+
+      - name: Create deployment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: retail-data-pipeline
+          path: deployment/
+
+      - name: Deployment successful
+        run: |
+          echo "====================================="
+          echo "Retail Data Pipeline deployment passed"
+          echo "====================================="
