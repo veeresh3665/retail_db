@@ -27,17 +27,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
+
       - name: Check Python version
-        run: python --version
+        run: |
+          python --version
+
 
       - name: Validate Airflow Python files
         run: |
           python -m compileall airflow
+
 
       - name: Validate Python validation script
         run: |
@@ -52,11 +57,34 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    # ==========================================
+    # Snowflake credentials
+    # Available to ALL steps in this job
+    # ==========================================
+
+    env:
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+      SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+      SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+
+
     steps:
+
+      # ==========================================
+      # 1. Checkout repository
+      # ==========================================
 
       - name: Checkout repository
         uses: actions/checkout@v4
 
+
+      # ==========================================
+      # 2. Setup Python
+      # ==========================================
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -64,31 +92,88 @@ jobs:
           python-version: "3.13"
 
 
+      # ==========================================
+      # 3. Install dbt
+      # ==========================================
+
       - name: Install dbt
         run: |
+          python -m pip install --upgrade pip
           pip install dbt-core==1.12.0
           pip install dbt-snowflake==1.12.0
 
+
+      # ==========================================
+      # 4. Check dbt version
+      # ==========================================
 
       - name: Check dbt version
         run: |
           dbt --version
 
 
+      # ==========================================
+      # 5. Check Snowflake secrets
+      # ==========================================
+
+      - name: Check Snowflake secrets
+        shell: bash
+        run: |
+          if [ -n "$SNOWFLAKE_ACCOUNT" ]; then
+            echo "SNOWFLAKE_ACCOUNT = SET"
+          else
+            echo "SNOWFLAKE_ACCOUNT = MISSING"
+          fi
+
+          if [ -n "$SNOWFLAKE_USER" ]; then
+            echo "SNOWFLAKE_USER = SET"
+          else
+            echo "SNOWFLAKE_USER = MISSING"
+          fi
+
+          if [ -n "$SNOWFLAKE_PASSWORD" ]; then
+            echo "SNOWFLAKE_PASSWORD = SET"
+          else
+            echo "SNOWFLAKE_PASSWORD = MISSING"
+          fi
+
+          if [ -n "$SNOWFLAKE_DATABASE" ]; then
+            echo "SNOWFLAKE_DATABASE = SET"
+          else
+            echo "SNOWFLAKE_DATABASE = MISSING"
+          fi
+
+          if [ -n "$SNOWFLAKE_SCHEMA" ]; then
+            echo "SNOWFLAKE_SCHEMA = SET"
+          else
+            echo "SNOWFLAKE_SCHEMA = MISSING"
+          fi
+
+          if [ -n "$SNOWFLAKE_WAREHOUSE" ]; then
+            echo "SNOWFLAKE_WAREHOUSE = SET"
+          else
+            echo "SNOWFLAKE_WAREHOUSE = MISSING"
+          fi
+
+          if [ -n "$SNOWFLAKE_ROLE" ]; then
+            echo "SNOWFLAKE_ROLE = SET"
+          else
+            echo "SNOWFLAKE_ROLE = MISSING"
+          fi
+
+
+      # ==========================================
+      # 6. Create dbt profiles.yml
+      # ==========================================
+
       - name: Create dbt profiles.yml
         working-directory: retail_dbt
-        env:
-          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
-          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
-          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
-          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+        shell: bash
         run: |
           cat > profiles.yml <<EOF
           retail_dbt:
             target: ci
+
             outputs:
               ci:
                 type: snowflake
@@ -102,6 +187,12 @@ jobs:
                 threads: 4
           EOF
 
+          echo "profiles.yml created successfully."
+
+
+      # ==========================================
+      # 7. Install dbt packages
+      # ==========================================
 
       - name: Install dbt dependencies
         working-directory: retail_dbt
@@ -109,13 +200,23 @@ jobs:
           dbt deps
 
 
+      # ==========================================
+      # 8. Test Snowflake connection
+      # ==========================================
+
       - name: dbt debug
         working-directory: retail_dbt
+        timeout-minutes: 3
         run: |
           dbt debug
 
 
+      # ==========================================
+      # 9. Parse dbt project
+      # ==========================================
+
       - name: dbt parse
         working-directory: retail_dbt
+        timeout-minutes: 5
         run: |
           dbt parse
