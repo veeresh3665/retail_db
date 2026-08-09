@@ -4,12 +4,11 @@ on:
   push:
     branches:
       - main
-      - develop
+      - developer1
 
   pull_request:
     branches:
       - main
-      - develop
 
 
 jobs:
@@ -237,12 +236,4 @@ jobs:
           dbt build
 
 
-      # ==========================================
-      # 11. Run dbt tests
-      # ==========================================
-
-      - name: dbt test
-        working-directory: retail_dbt
-        timeout-minutes: 10
-        run: |
-          dbt test
+      
