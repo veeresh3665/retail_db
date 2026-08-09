@@ -1,19 +1,37 @@
 version: 2
 
 models:
-
   - name: mart_sales_summary
+    description: "Monthly sales summary showing sales, orders, and quantity."
 
     columns:
 
-      - name: order_date
+      - name: year
+        description: "Calendar year."
+        tests:
+          - not_null
+
+      - name: month
+        description: "Calendar month number."
+        tests:
+          - not_null
+
+      - name: month_name
+        description: "Calendar month name."
         tests:
           - not_null
 
       - name: total_sales
+        description: "Total sales amount for the month."
         tests:
           - not_null
 
       - name: total_orders
+        description: "Number of distinct orders for the month."
+        tests:
+          - not_null
+
+      - name: total_quantity
+        description: "Total quantity of products sold during the month."
         tests:
           - not_null

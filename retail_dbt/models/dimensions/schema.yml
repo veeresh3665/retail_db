@@ -62,7 +62,7 @@ models:
           - unique
           - not_null
 
-  - name: dim_employees
+  - name: dim_employee
     columns:
       - name: employee_sk
         tests:
