@@ -1,0 +1,32 @@
+{"timestamp":"2026-08-08T21:17:35.673614Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-08T21:17:35.679538Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/retail_reconciliation.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-08T21:17:41.393785Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.432368Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.433649Z","level":"info","event":"Current task name:raw_to_staging_payments","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.504207Z","level":"info","event":"Dag name:retail_reconciliation","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.530365Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.539245Z","level":"info","event":"RECONCILIATION CHECK: payments","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.549091Z","level":"info","event":"Source table : RETAIL_DB.RAW.PAYMENTS","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.550255Z","level":"info","event":"Target table : RETAIL_DB.V_STG_STAGING.STG_PAYMENTS","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:41.559931Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-08T21:17:41.561885Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-08T21:17:51.020002Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.RAW.PAYMENTS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-08T21:17:51.020807Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.RAW.PAYMENTS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-08T21:17:51.224347Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-08T21:17:51.225319Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-08T21:17:51.225517Z","level":"info","event":"Snowflake query id: 01c6429d-000d-e4c4-0001-875600073b72","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-08T21:17:51.672399Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-08T21:17:51.685292Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-08T21:17:53.360837Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.V_STG_STAGING.STG_PAYMENTS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-08T21:17:53.362074Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.V_STG_STAGING.STG_PAYMENTS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-08T21:17:53.537775Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-08T21:17:53.539058Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-08T21:17:53.539301Z","level":"info","event":"Snowflake query id: 01c6429d-000d-e4c4-0001-875600073bae","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-08T21:17:53.884507Z","level":"info","event":"Source count : 10000","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.885833Z","level":"info","event":"Target count : 10000","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.887145Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.888495Z","level":"info","event":"PASS: payments | Rows=10000","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.883738Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-08T21:17:54.095542Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:54.109560Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:54.117344Z","level":"info","event":"Task operator:<Task(PythonOperator): raw_to_staging_payments>","logger":"task.stdout"}

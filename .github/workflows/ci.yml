@@ -1,0 +1,44 @@
+name: Retail Data Pipeline CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+
+  dbt-ci:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dbt
+        run: |
+          pip install dbt-core==1.12.0
+          pip install dbt-snowflake==1.12.0
+
+      - name: Check dbt version
+        run: dbt --version
+
+      - name: Install dbt dependencies
+        working-directory: dbt/retail_dbt1
+        run: dbt deps
+
+      - name: Compile dbt project
+        working-directory: dbt/retail_dbt1
+        run: dbt compile

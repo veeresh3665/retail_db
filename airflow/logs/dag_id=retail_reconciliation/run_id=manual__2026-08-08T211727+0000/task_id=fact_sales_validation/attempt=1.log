@@ -1,0 +1,23 @@
+{"timestamp":"2026-08-08T21:17:59.536603Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-08T21:17:59.539419Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/retail_reconciliation.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-08T21:18:03.058433Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:03.064071Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:03.065617Z","level":"info","event":"Current task name:fact_sales_validation","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:03.067479Z","level":"info","event":"Dag name:retail_reconciliation","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:03.104143Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-08T21:18:03.106130Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-08T21:18:06.315501Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.V_STG_FACT.FACT_SALES, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-08T21:18:06.316662Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.V_STG_FACT.FACT_SALES, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-08T21:18:06.577519Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-08T21:18:06.579863Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-08T21:18:06.580083Z","level":"info","event":"Snowflake query id: 01c6429e-000d-e4c4-0001-875600073bf2","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-08T21:18:07.029953Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.062888Z","level":"info","event":"FACT CHECK: fact_sales","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.080328Z","level":"info","event":"Table: RETAIL_DB.V_STG_FACT.FACT_SALES","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.088193Z","level":"info","event":"Rows : 24855","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.090200Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.091698Z","level":"info","event":"PASS: fact_sales | Rows=24855","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.029348Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-08T21:18:07.187264Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.189101Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:18:07.196197Z","level":"info","event":"Task operator:<Task(PythonOperator): fact_sales_validation>","logger":"task.stdout"}

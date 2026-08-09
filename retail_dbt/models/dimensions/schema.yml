@@ -1,0 +1,75 @@
+version: 2
+
+models:
+
+  - name: dim_customer
+    columns:
+      - name: customer_sk
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_product
+    columns:
+      - name: product_sk
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_store
+    columns:
+      - name: store_sk
+        tests:
+          - unique
+          - not_null
+
+      - name: store_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_supplier
+    columns:
+      - name: supplier_sk
+        tests:
+          - unique
+          - not_null
+
+      - name: supplier_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_category
+    columns:
+      - name: category_sk
+        tests:
+          - unique
+          - not_null
+
+      - name: category_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_employees
+    columns:
+      - name: employee_sk
+        tests:
+          - unique
+          - not_null
+
+      - name: employee_id
+        tests:
+          - unique
+          - not_nulld

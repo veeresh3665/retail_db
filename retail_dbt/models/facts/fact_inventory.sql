@@ -1,17 +1,37 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='incremental',
+    unique_key='inventory_id',
+    tags=['inventory']
+) }}
 
 select
 
-    inventory_id,
+    i.inventory_id,
 
-    store_id,
+    ds.store_sk,
 
-    product_id,
+    dp.product_sk,
 
-    stock,
+    i.stock,
 
-    reorder_level,
+    i.reorder_level,
 
-    last_updated
+    i.last_updated
 
-from {{ ref('stg_inventory') }}
+from {{ ref('stg_inventory') }} i
+
+left join {{ ref('dim_store') }} ds
+    on i.store_id = ds.store_id
+
+left join {{ ref('dim_product') }} dp
+    on i.product_id = dp.product_id
+
+{% if is_incremental() %}
+
+where i.last_updated >
+(
+    select max(last_updated)
+    from {{ this }}
+)
+
+{% endif %}

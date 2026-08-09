@@ -1,4 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table',
+    tags=['sales']
+) }}
 
 select
 
@@ -19,7 +22,7 @@ select
 from {{ ref('fact_inventory') }} i
 
 join {{ ref('dim_store') }} s
-    on i.store_id = s.store_id
+    on i.store_sk = s.store_sk
 
 join {{ ref('dim_product') }} p
-    on i.product_id = p.product_id
+    on i.product_sk = p.product_sk

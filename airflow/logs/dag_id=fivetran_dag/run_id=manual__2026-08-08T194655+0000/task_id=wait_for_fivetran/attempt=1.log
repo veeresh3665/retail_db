@@ -1,0 +1,17 @@
+{"timestamp":"2026-08-08T19:47:05.600260Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-08T19:47:05.602584Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/fivetran_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-08T19:47:06.326819Z","level":"warning","event":"Skipping masking for a secret as it's too short (<5 chars)","logger":"airflow._shared.secrets_masker.secrets_masker","filename":"secrets_masker.py","lineno":555}
+{"timestamp":"2026-08-08T19:47:06.381658Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:06.382864Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:06.384275Z","level":"info","event":"Current task name:wait_for_fivetran","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:06.386005Z","level":"info","event":"Dag name:fivetran_dag","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:06.387088Z","level":"info","event":"Waiting for Fivetran sync to complete...","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:06.385925Z","level":"warning","event":"The `airflow.hooks.base.BaseHook` attribute is deprecated. Please use `'airflow.sdk.bases.hook.BaseHook'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/fivetran_dag.py","lineno":55,"logger":"py.warnings"}
+{"timestamp":"2026-08-08T19:47:07.672625Z","level":"info","event":"Attempt 1: sync_state=syncing, update_state=on_schedule","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:07.673750Z","level":"info","event":"Fivetran sync is still running. Waiting...","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:38.651971Z","level":"info","event":"Attempt 2: sync_state=scheduled, update_state=on_schedule","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:38.653044Z","level":"info","event":"Fivetran sync completed and connection is scheduled.","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:38.651979Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-08T19:47:38.682050Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:38.683111Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-08T19:47:38.684109Z","level":"info","event":"Task operator:<Task(PythonOperator): wait_for_fivetran>","logger":"task.stdout"}

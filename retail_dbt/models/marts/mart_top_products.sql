@@ -15,7 +15,7 @@ select
 from {{ ref('fact_sales') }} f
 
 join {{ ref('dim_product') }} p
-    on f.product_id = p.product_id
+    on f.product_sk = p.product_sk
 
 group by
 

@@ -15,9 +15,9 @@ retail_dbt:
 
       role: ACCOUNTADMIN
 
-      database: VE_trans
+      database: retail_db
 
-      warehouse: COMPUTE_WH
+      warehouse: Veeresh
 
       schema: v_stg
 

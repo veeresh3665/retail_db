@@ -1,0 +1,5 @@
+supplier_type_id,supplier_type
+1,Manufacturer
+2,Wholesaler
+3,Distributor
+4,Importer

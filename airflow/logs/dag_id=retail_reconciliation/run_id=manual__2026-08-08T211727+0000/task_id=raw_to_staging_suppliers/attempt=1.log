@@ -1,0 +1,32 @@
+{"timestamp":"2026-08-08T21:17:36.011865Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-08T21:17:36.018586Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/retail_reconciliation.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-08T21:17:44.348176Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.359403Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.363687Z","level":"info","event":"Current task name:raw_to_staging_suppliers","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.365031Z","level":"info","event":"Dag name:retail_reconciliation","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.366740Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.369169Z","level":"info","event":"RECONCILIATION CHECK: suppliers","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.370334Z","level":"info","event":"Source table : RETAIL_DB.RAW.SUPPLIERS","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.371400Z","level":"info","event":"Target table : RETAIL_DB.V_STG_STAGING.STG_SUPPLIERS","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:44.454116Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-08T21:17:44.471595Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-08T21:17:51.583451Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.RAW.SUPPLIERS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-08T21:17:51.584870Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.RAW.SUPPLIERS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-08T21:17:51.774902Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-08T21:17:51.792541Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-08T21:17:51.792905Z","level":"info","event":"Snowflake query id: 01c6429d-000d-e4c5-0001-875600071c1a","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-08T21:17:52.232226Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-08T21:17:52.233230Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-08T21:17:53.344784Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.V_STG_STAGING.STG_SUPPLIERS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-08T21:17:53.345886Z","level":"info","event":"Running statement: SELECT COUNT(*)\n        FROM RETAIL_DB.V_STG_STAGING.STG_SUPPLIERS, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-08T21:17:53.583810Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-08T21:17:53.585000Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-08T21:17:53.585256Z","level":"info","event":"Snowflake query id: 01c6429d-000d-e4c4-0001-875600073baa","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-08T21:17:53.939798Z","level":"info","event":"Source count : 100","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.944888Z","level":"info","event":"Target count : 100","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.946677Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.948636Z","level":"info","event":"PASS: suppliers | Rows=100","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:53.938778Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-08T21:17:54.162073Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:54.165139Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-08T21:17:54.169930Z","level":"info","event":"Task operator:<Task(PythonOperator): raw_to_staging_suppliers>","logger":"task.stdout"}

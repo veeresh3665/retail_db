@@ -1,0 +1,13 @@
+{"timestamp":"2026-08-05T16:24:40.022173Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-05T16:24:40.024005Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/retail_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-05T16:24:40.076123Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:40.077715Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:40.078793Z","level":"info","event":"Current task name:api_extract","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:40.079721Z","level":"info","event":"Dag name:retail_etl_pipeline","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:43.660216Z","level":"info","event":"Saved : c:\\Users\\HP\\Documents\\Veeresh_snowflake/Customers1/customers1.csv","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:43.661323Z","level":"info","event":"Saved : c:\\Users\\HP\\Documents\\Veeresh_snowflake/Products1/products1.csv","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:43.662114Z","level":"info","event":"Saved : c:\\Users\\HP\\Documents\\Veeresh_snowflake/Orders1/orders1.csv","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:43.800595Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-05T16:24:43.831569Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:43.833090Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:43.834308Z","level":"info","event":"Task operator:<Task(PythonOperator): api_extract>","logger":"task.stdout"}

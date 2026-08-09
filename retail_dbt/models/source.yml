@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: RETAIL_DB
+    schema: RAW
+
+    config:
+      freshness:
+        warn_after:
+          count: 45
+          period: hour
+        error_after:
+          count: 50
+          period: hour
+
+    tables:
+      # Transaction & Master Data (Fivetran)
+      - name: customers
+      - name: products
+      - name: categories
+      - name: suppliers
+      - name: stores
+      - name: employees
+      - name: orders
+      - name: order_items
+      - name: payments
+      - name: shipments
+      - name: inventory
+      - name: reviews
+
+     

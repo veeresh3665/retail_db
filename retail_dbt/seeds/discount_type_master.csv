@@ -1,0 +1,6 @@
+discount_id,discount_type
+1,Flat
+2,Percentage
+3,Coupon
+4,Festival Offer
+5,Loyalty Offer

@@ -1,0 +1,7 @@
+transaction_type_id,transaction_type
+1,Purchase
+2,Sale
+3,Return
+4,Adjustment
+5,Transfer
+6,Damage

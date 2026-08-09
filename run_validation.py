@@ -50,7 +50,7 @@ def insert_result(
 
 # CHECK 1
 
-table="RETAIL_DB.ANALYTICS.DIM_CUSTOMERS"
+table="RETAIL_DB1..DIM_CUSTOMERS"
 
 result,count=null_check(
     cursor,

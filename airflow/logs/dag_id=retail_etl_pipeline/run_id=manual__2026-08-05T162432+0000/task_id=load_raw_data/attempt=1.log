@@ -1,0 +1,43 @@
+{"timestamp":"2026-08-05T16:24:45.417103Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-05T16:24:45.418580Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/retail_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-05T16:24:45.455297Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:45.456757Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:45.457518Z","level":"info","event":"Current task name:load_raw_data","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:45.458129Z","level":"info","event":"Dag name:retail_etl_pipeline","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.940479Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.941672Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.942645Z","level":"info","event":"Reading File : c:\\Users\\HP\\Documents\\Veeresh_snowflake/Products1/products1.csv","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.943596Z","level":"info","event":"Target Table : PRODUCTS1","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.944436Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.945291Z","level":"info","event":"✅ Connected Successfully","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.946803Z","level":"info","event":"✅ Table PRODUCTS1 is ready","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.947900Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.949374Z","level":"info","event":"✅ PRODUCTS1 Loaded Successfully","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.950542Z","level":"info","event":"✅ Rows Inserted : 30","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.951732Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.952696Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.953570Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.954392Z","level":"info","event":"Reading File : c:\\Users\\HP\\Documents\\Veeresh_snowflake/Customers1/customers1.csv","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.955195Z","level":"info","event":"Target Table : CUSTOMERS1","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.955955Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.956773Z","level":"info","event":"✅ Connected Successfully","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.957628Z","level":"info","event":"✅ Table CUSTOMERS1 is ready","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.958484Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.959319Z","level":"info","event":"✅ CUSTOMERS1 Loaded Successfully","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.960112Z","level":"info","event":"✅ Rows Inserted : 30","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.960829Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.961638Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.962498Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.963374Z","level":"info","event":"Reading File : c:\\Users\\HP\\Documents\\Veeresh_snowflake/Orders1/orders1.csv","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.964217Z","level":"info","event":"Target Table : ORDERS1","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.965062Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.966027Z","level":"info","event":"✅ Connected Successfully","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.966975Z","level":"info","event":"✅ Table ORDERS1 is ready","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.967947Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.968811Z","level":"info","event":"✅ ORDERS1 Loaded Successfully","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.969759Z","level":"info","event":"✅ Rows Inserted : 30","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:52.970644Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:53.155734Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-05T16:24:53.184377Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:53.185693Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-05T16:24:53.186757Z","level":"info","event":"Task operator:<Task(PythonOperator): load_raw_data>","logger":"task.stdout"}

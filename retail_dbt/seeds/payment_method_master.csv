@@ -1,0 +1,8 @@
+payment_method_id,payment_method
+1,Cash
+2,Credit Card
+3,Debit Card
+4,UPI
+5,Net Banking
+6,Wallet
+7,Gift Card

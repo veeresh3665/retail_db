@@ -2,15 +2,24 @@
 
 select
 
-    review_id,
+    r.review_id,
 
-    customer_id,
+    dc.customer_sk,
 
-    product_id,
+    dp.product_sk,
 
-    rating,
+    r.rating,
 
-    review_date
+    r.review_date
 
-from {{ ref('stg_reviews') }}
+from {{ ref('stg_reviews') }} r
 
+left join {{ ref('dim_customer') }} dc
+    on r.customer_id = dc.customer_id
+   and r.review_date >= dc.dbt_valid_from
+   and r.review_date < coalesce(dc.dbt_valid_to, '9999-12-31')
+
+left join {{ ref('dim_product') }} dp
+    on r.product_id = dp.product_id
+   and r.review_date >= dp.dbt_valid_from
+   and r.review_date < coalesce(dp.dbt_valid_to, '9999-12-31')

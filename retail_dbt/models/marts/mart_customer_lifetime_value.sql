@@ -13,7 +13,7 @@ select
 from {{ ref('fact_sales') }} f
 
 join {{ ref('dim_customer') }} c
-    on f.customer_id = c.customer_id
+    on f.customer_sk = c.customer_sk
 
 group by
 

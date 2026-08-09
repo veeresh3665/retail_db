@@ -1,0 +1,19 @@
+version: 2
+
+models:
+
+  - name: mart_sales_summary
+
+    columns:
+
+      - name: order_date
+        tests:
+          - not_null
+
+      - name: total_sales
+        tests:
+          - not_null
+
+      - name: total_orders
+        tests:
+          - not_null

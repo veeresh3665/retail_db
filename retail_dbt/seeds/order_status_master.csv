@@ -1,0 +1,8 @@
+status_id,status_name
+1,Pending
+2,Confirmed
+3,Packed
+4,Shipped
+5,Delivered
+6,Cancelled
+7,Returned

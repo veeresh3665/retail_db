@@ -1,0 +1,7 @@
+shipment_status_id,status
+1,Preparing
+2,Ready to Ship
+3,In Transit
+4,Out For Delivery
+5,Delivered
+6,Returned

@@ -1,0 +1,5 @@
+date_key,year,quarter,month,month_name,day,day_name,is_weekend
+20260101,2026,Q1,1,January,1,Thursday,False
+20260102,2026,Q1,1,January,2,Friday,False
+20260103,2026,Q1,1,January,3,Saturday,True
+20260104,2026,Q1,1,January,4,Sunday,True

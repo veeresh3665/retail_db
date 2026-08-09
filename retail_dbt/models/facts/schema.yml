@@ -1,0 +1,45 @@
+version: 2
+
+models:
+
+  - name: fact_sales
+
+    columns:
+
+      - name: customer_sk
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_sk
+
+      - name: product_sk
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_sk
+
+      - name: store_sk
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_store')
+                field: store_sk
+
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: quantity
+        tests:
+          - not_null
+
+      - name: line_total
+        tests:
+          - not_null
+          - positive_amount
+      

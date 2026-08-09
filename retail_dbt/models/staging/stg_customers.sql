@@ -3,12 +3,12 @@
 select
 
     trim(customer_id)                     as customer_id,
-    trim(customer_name)                   as customer_name,
+    {{ clean_text('CUSTOMER_NAME') }} AS CUSTOMER_NAME,
     trim(gender)                          as gender,
 
     cast(dob as date)                     as dob,
 
-    lower(trim(email))                    as email,
+   {{ clean_text('EMAIL') }} AS EMAIL,
 
     trim(phone)                           as phone,
 

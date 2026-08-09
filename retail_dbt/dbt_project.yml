@@ -34,18 +34,43 @@ models:
     # Config indicated by + and applies to all files under models/example/
   
 
+
     staging:
       +materialized: view
       +schema: STAGING
+      +tags:
+        - staging
 
     dimensions:
       +materialized: table
       +schema: DIM
+      +tags:
+        - dimension
 
     facts:
       +materialized: table
       +schema: FACT
+      +tags:
+        - fact
 
     marts:
       +materialized: table
       +schema: MART
+      +tags:
+        - mart
+seeds:
+  retail_dbt:
+    +schema: SEED
+    +quote_columns: false
+
+vars:
+
+  historical_load_date: '2025-01-01'
+
+  country_name: 'FINLAND'
+
+  currency: 'EUR'
+
+  tax_percentage: 24
+
+  project_name: 'Retail DW'
