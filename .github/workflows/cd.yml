@@ -6,9 +6,19 @@ on:
       - main
 
 jobs:
+
   deploy:
     name: Deploy Retail Data Pipeline
     runs-on: ubuntu-latest
+
+    env:
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+      SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+      SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
 
     steps:
 
@@ -33,7 +43,6 @@ jobs:
       - name: Create deployment package
         run: |
           mkdir -p deployment
-
           cp -r airflow/dags deployment/airflow_dags
           cp -r retail_dbt deployment/retail_dbt
 
