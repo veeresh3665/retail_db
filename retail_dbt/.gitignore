@@ -3,3 +3,13 @@ target/
 dbt_packages/
 logs/
 .env
+
+# dbt credentials
+retail_dbt/profiles.yml
+
+# Airflow generated logs
+airflow/logs/
+
+# Python cache
+__pycache__/
+*.pyc
