@@ -36,9 +36,9 @@ jobs:
         run: dbt --version
 
       - name: Install dbt dependencies
-        working-directory: dbt/retail_dbt1
+        working-directory: dbt/retail_dbt
         run: dbt deps
 
       - name: Compile dbt project
-        working-directory: dbt/retail_dbt1
+        working-directory: dbt/retail_dbt
         run: dbt compile
