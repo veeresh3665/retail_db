@@ -1,26 +1,14 @@
 retail_dbt:
-  target: dev
+  target: ci
 
   outputs:
-
-    dev:
-
+    ci:
       type: snowflake
-
-      account: MKKDCUL-RL41122
-
-      user: VEERESH123
-
-      password: Veereshkumar@135
-
-      role: ACCOUNTADMIN
-
-      database: retail_db
-
-      warehouse: Veeresh
-
-      schema: v_stg
-
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
       threads: 4
-
-      client_session_keep_alive: False
