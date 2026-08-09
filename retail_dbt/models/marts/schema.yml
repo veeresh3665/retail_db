@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: mart_sales_summary
+  - name: mart_monthly_sales
     description: "Monthly sales summary showing sales, orders, and quantity."
 
     columns:

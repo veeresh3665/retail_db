@@ -119,6 +119,7 @@ jobs:
       - name: Check Snowflake secrets
         shell: bash
         run: |
+
           if [ -n "$SNOWFLAKE_ACCOUNT" ]; then
             echo "SNOWFLAKE_ACCOUNT = SET"
           else
@@ -170,7 +171,9 @@ jobs:
         working-directory: retail_dbt
         shell: bash
         run: |
+
           cat > profiles.yml <<EOF
+
           retail_dbt:
             target: ci
 
@@ -185,6 +188,7 @@ jobs:
                 warehouse: "$SNOWFLAKE_WAREHOUSE"
                 role: "$SNOWFLAKE_ROLE"
                 threads: 4
+
           EOF
 
           echo "profiles.yml created successfully."
@@ -220,3 +224,25 @@ jobs:
         timeout-minutes: 5
         run: |
           dbt parse
+
+
+      # ==========================================
+      # 10. Build dbt project
+      # ==========================================
+
+      - name: dbt build
+        working-directory: retail_dbt
+        timeout-minutes: 15
+        run: |
+          dbt build
+
+
+      # ==========================================
+      # 11. Run dbt tests
+      # ==========================================
+
+      - name: dbt test
+        working-directory: retail_dbt
+        timeout-minutes: 10
+        run: |
+          dbt test
