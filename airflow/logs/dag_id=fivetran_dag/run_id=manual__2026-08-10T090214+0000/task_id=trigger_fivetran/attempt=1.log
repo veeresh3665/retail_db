@@ -1,0 +1,17 @@
+{"timestamp":"2026-08-10T09:02:24.601338Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-10T09:02:24.602803Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/fivetran_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-10T09:02:25.377479Z","level":"warning","event":"Skipping masking for a secret as it's too short (<5 chars)","logger":"airflow.sdk._shared.secrets_masker.secrets_masker","filename":"secrets_masker.py","lineno":555}
+{"timestamp":"2026-08-10T09:02:25.379689Z","level":"warning","event":"Skipping masking for a secret as it's too short (<5 chars)","logger":"airflow._shared.secrets_masker.secrets_masker","filename":"secrets_masker.py","lineno":555}
+{"timestamp":"2026-08-10T09:02:25.736593Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:25.737765Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:25.738829Z","level":"info","event":"Current task name:trigger_fivetran","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:25.739781Z","level":"info","event":"Dag name:fivetran_dag","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:25.741049Z","level":"info","event":"Triggering Fivetran connection: splint_typewriter","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:25.741735Z","level":"warning","event":"The `airflow.hooks.base.BaseHook` attribute is deprecated. Please use `'airflow.sdk.bases.hook.BaseHook'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/fivetran_dag.py","lineno":55,"logger":"py.warnings"}
+{"timestamp":"2026-08-10T09:02:26.999291Z","level":"info","event":"Fivetran sync trigger response:","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:27.000359Z","level":"info","event":"{'code': 'Success', 'message': \"Sync has been successfully triggered for connection with id 'splint_typewriter'\"}","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:27.001288Z","level":"info","event":"Fivetran sync successfully triggered.","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:26.999308Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-10T09:02:27.029881Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:27.031193Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:02:27.032493Z","level":"info","event":"Task operator:<Task(PythonOperator): trigger_fivetran>","logger":"task.stdout"}

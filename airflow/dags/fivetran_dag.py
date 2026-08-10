@@ -288,7 +288,7 @@ def check_fivetran_data():
 
         WHERE _FIVETRAN_SYNCED >= DATEADD(
             hour,
-            -12,
+            -500,
             CURRENT_TIMESTAMP()
         )
 

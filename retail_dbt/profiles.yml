@@ -4,11 +4,11 @@ retail_dbt:
   outputs:
     ci:
       type: snowflake
-      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
-      user: "{{ env_var('SNOWFLAKE_USER') }}"
-      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
-      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
-      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
-      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
-      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      account: MKKDCUL-RL41122
+      user: VEERESH123
+      password: Veereshkumar@135
+      database: retail_db
+      schema: raw
+      warehouse: Veeresh
+      role: ACCOUNTADMIN
       threads: 4

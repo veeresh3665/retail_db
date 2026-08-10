@@ -1,0 +1,20 @@
+{"timestamp":"2026-08-10T09:54:39.851615Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-10T09:54:39.853826Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/full_flow.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-10T09:54:41.395652Z","level":"warning","event":"Skipping masking for a secret as it's too short (<5 chars)","logger":"airflow._shared.secrets_masker.secrets_masker","filename":"secrets_masker.py","lineno":555}
+{"timestamp":"2026-08-10T09:54:41.443283Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:41.445260Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:41.447327Z","level":"info","event":"Current task name:check_fivetran_data","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:41.448613Z","level":"info","event":"Dag name:full_flow","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:41.469322Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-10T09:54:41.470617Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-10T09:54:47.545783Z","level":"info","event":"Running statement: SELECT\n            COUNT(*)\n        FROM RETAIL_DB.RAW.ORDERS\n        WHERE _FIVETRAN_SYNCED >= DATEADD(\n            hour,\n            -50,\n            CURRENT_TIMESTAMP()\n        ), parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-10T09:54:47.547077Z","level":"info","event":"Running statement: SELECT\n            COUNT(*)\n        FROM RETAIL_DB.RAW.ORDERS\n        WHERE _FIVETRAN_SYNCED >= DATEADD(\n            hour,\n            -50,\n            CURRENT_TIMESTAMP()\n        ), parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-10T09:54:47.681459Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-10T09:54:47.682615Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-10T09:54:47.682897Z","level":"info","event":"Snowflake query id: 01c64b32-000d-e536-0001-875600089d86","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-10T09:54:48.013494Z","level":"info","event":"Fivetran records loaded in last 12 hours: 10000","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:48.014841Z","level":"info","event":"Fivetran RAW data validation successful.","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:48.013527Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-10T09:54:48.038624Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:48.040021Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:54:48.041301Z","level":"info","event":"Task operator:<Task(PythonOperator): check_fivetran_data>","logger":"task.stdout"}

@@ -1,0 +1,23 @@
+{"timestamp":"2026-08-10T09:52:15.928165Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-10T09:52:15.931307Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_quality_check.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-10T09:52:38.193413Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:38.522898Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:38.649996Z","level":"info","event":"Current task name:check_order_items","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:38.672182Z","level":"info","event":"Dag name:retail_data_quality","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:38.716358Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:38.718524Z","level":"info","event":"DATA QUALITY CHECK: ORDER_ITEMS_NULL_ORDER_ITEM_ID","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:38.732217Z","level":"info","event":"TABLE: RETAIL_DB.RAW.ORDER_ITEMS","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:38.737530Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:52:42.399125Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-10T09:52:42.400654Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-10T09:53:01.028117Z","level":"info","event":"Running statement: SELECT COUNT(*)\n            FROM RETAIL_DB.RAW.ORDER_ITEMS\n            WHERE ORDER_ITEM_ID IS NULL, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-10T09:53:01.028424Z","level":"info","event":"Running statement: SELECT COUNT(*)\n            FROM RETAIL_DB.RAW.ORDER_ITEMS\n            WHERE ORDER_ITEM_ID IS NULL, parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-10T09:53:01.284864Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-10T09:53:01.285694Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-10T09:53:01.285886Z","level":"info","event":"Snowflake query id: 01c64b31-000d-e536-0001-875600089d7e","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-10T09:53:01.808842Z","level":"info","event":"ORDER_ITEMS_NULL_ORDER_ITEM_ID violation count: 0","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:53:01.811369Z","level":"info","event":"DATA QUALITY PASSED: ORDER_ITEMS_NULL_ORDER_ITEM_ID","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:53:01.808972Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-10T09:53:02.321374Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:53:02.328972Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-10T09:53:02.330611Z","level":"info","event":"Task operator:<Task(PythonOperator): check_order_items>","logger":"task.stdout"}

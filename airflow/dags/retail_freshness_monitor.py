@@ -17,7 +17,7 @@ ALERT_EMAIL = "chakaliveeresh137@gmail.com"
 
 # Maximum allowed age of Fivetran data
 # Change this according to your Fivetran schedule.
-FRESHNESS_THRESHOLD_MINUTES = 60
+FRESHNESS_THRESHOLD_MINUTES = 600
 
 
 # ============================================================

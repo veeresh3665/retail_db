@@ -1,0 +1,20 @@
+{"timestamp":"2026-08-10T10:07:19.984608Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-08-10T10:07:19.986095Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/fivetran_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-08-10T10:07:20.438758Z","level":"warning","event":"Skipping masking for a secret as it's too short (<5 chars)","logger":"airflow._shared.secrets_masker.secrets_masker","filename":"secrets_masker.py","lineno":555}
+{"timestamp":"2026-08-10T10:07:20.699280Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:20.700263Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:20.701075Z","level":"info","event":"Current task name:validate_fivetran_raw","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:20.701750Z","level":"info","event":"Dag name:fivetran_dag","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:20.712586Z","level":"info","event":"Snowflake Connector for Python Version: 4.7.2, Python Version: 3.12.12, Platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36","logger":"snowflake.connector.connection","filename":"connection.py","lineno":642}
+{"timestamp":"2026-08-10T10:07:20.713221Z","level":"info","event":"Connecting to GLOBAL Snowflake domain","logger":"snowflake.connector.connection","filename":"connection.py","lineno":1765}
+{"timestamp":"2026-08-10T10:07:22.534281Z","level":"info","event":"Running statement: SELECT COUNT(*)\n\n        FROM RETAIL_DB.RAW.ORDERS\n\n        WHERE _FIVETRAN_SYNCED >= DATEADD(\n            hour,\n            -500,\n            CURRENT_TIMESTAMP()\n        ), parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":546}
+{"timestamp":"2026-08-10T10:07:22.534473Z","level":"info","event":"Running statement: SELECT COUNT(*)\n\n        FROM RETAIL_DB.RAW.ORDERS\n\n        WHERE _FIVETRAN_SYNCED >= DATEADD(\n            hour,\n            -500,\n            CURRENT_TIMESTAMP()\n        ), parameters: None","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":810}
+{"timestamp":"2026-08-10T10:07:22.659034Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"sql.py","lineno":822}
+{"timestamp":"2026-08-10T10:07:22.659497Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":559}
+{"timestamp":"2026-08-10T10:07:22.659586Z","level":"info","event":"Snowflake query id: 01c64b3f-000d-e536-0001-875600089f3e","logger":"airflow.task.hooks.airflow.providers.snowflake.hooks.snowflake.SnowflakeHook","filename":"snowflake.py","lineno":560}
+{"timestamp":"2026-08-10T10:07:22.969193Z","level":"info","event":"Recent Fivetran records: 10000","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:22.971347Z","level":"info","event":"Snowflake RAW validation successful.","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:22.969213Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-08-10T10:07:22.996919Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:22.998129Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-08-10T10:07:23.005589Z","level":"info","event":"Task operator:<Task(PythonOperator): validate_fivetran_raw>","logger":"task.stdout"}
