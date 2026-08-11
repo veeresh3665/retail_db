@@ -2,8 +2,12 @@ version: 2
 
 models:
 
+  # ============================================================
+  # CUSTOMERS
+  # ============================================================
   - name: stg_customers
     columns:
+
       - name: customer_id
         tests:
           - unique
@@ -13,8 +17,13 @@ models:
         tests:
           - not_null
 
+
+  # ============================================================
+  # PRODUCTS
+  # ============================================================
   - name: stg_products
     columns:
+
       - name: product_id
         tests:
           - unique
@@ -23,34 +32,62 @@ models:
       - name: category_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_categories')
+                field: category_id
 
       - name: supplier_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_suppliers')
+                field: supplier_id
 
+
+  # ============================================================
+  # CATEGORIES
+  # ============================================================
   - name: stg_categories
     columns:
+
       - name: category_id
         tests:
           - unique
           - not_null
 
+
+  # ============================================================
+  # SUPPLIERS
+  # ============================================================
   - name: stg_suppliers
     columns:
+
       - name: supplier_id
         tests:
           - unique
           - not_null
 
+
+  # ============================================================
+  # STORES
+  # ============================================================
   - name: stg_stores
     columns:
+
       - name: store_id
         tests:
           - unique
           - not_null
 
+
+  # ============================================================
+  # EMPLOYEES
+  # ============================================================
   - name: stg_employees
     columns:
+
       - name: employee_id
         tests:
           - unique
@@ -59,9 +96,18 @@ models:
       - name: store_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_stores')
+                field: store_id
 
+
+  # ============================================================
+  # ORDERS
+  # ============================================================
   - name: stg_orders
     columns:
+
       - name: order_id
         tests:
           - unique
@@ -70,13 +116,26 @@ models:
       - name: customer_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
 
       - name: store_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_stores')
+                field: store_id
 
+
+  # ============================================================
+  # ORDER ITEMS
+  # ============================================================
   - name: stg_order_items
     columns:
+
       - name: order_item_id
         tests:
           - unique
@@ -85,13 +144,26 @@ models:
       - name: order_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
 
       - name: product_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
 
+
+  # ============================================================
+  # PAYMENTS
+  # ============================================================
   - name: stg_payments
     columns:
+
       - name: payment_id
         tests:
           - unique
@@ -100,9 +172,18 @@ models:
       - name: order_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
 
+
+  # ============================================================
+  # SHIPMENTS
+  # ============================================================
   - name: stg_shipments
     columns:
+
       - name: shipment_id
         tests:
           - unique
@@ -111,9 +192,18 @@ models:
       - name: order_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
 
+
+  # ============================================================
+  # INVENTORY
+  # ============================================================
   - name: stg_inventory
     columns:
+
       - name: inventory_id
         tests:
           - unique
@@ -122,13 +212,26 @@ models:
       - name: store_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_stores')
+                field: store_id
 
       - name: product_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
 
+
+  # ============================================================
+  # REVIEWS
+  # ============================================================
   - name: stg_reviews
     columns:
+
       - name: review_id
         tests:
           - unique
@@ -137,7 +240,15 @@ models:
       - name: customer_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
 
       - name: product_id
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
